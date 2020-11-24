@@ -13,6 +13,8 @@ namespace SharpDocs.Attributes
         /// </summary>
         public string Name { get; set; }
 
+        public SharpDocsName() { }
+
         public SharpDocsName(string name)
         {
             Name = name;

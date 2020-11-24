@@ -23,6 +23,8 @@ namespace SharpDocs.Attributes
         /// </summary>
         public Type ResponseType { get; set; }
 
+        public SharpDocsResponse() { }
+
         public SharpDocsResponse(int statusCode, string description, Type responseType)
         {
             StatusCode = statusCode;

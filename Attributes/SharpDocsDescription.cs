@@ -18,6 +18,8 @@ namespace SharpDocs.Attributes
         /// </summary>
         public string GroupName { get; set; }
 
+        public SharpDocsDescription() { }
+
         public SharpDocsDescription(string description, string groupName)
         {
             Description = description;
