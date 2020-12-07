@@ -112,6 +112,16 @@ namespace SharpDocs
                                             }
                                             else if (attribute is SharpDocsResponseAttribute sharpDocsResponse)
                                             {
+                                                /*Type[] type;
+
+                                                if (sharpDocsResponse.ResponseType != null && sharpDocsResponse.ResponseType.IsGenericType)
+                                                {
+                                                    type = sharpDocsResponse.ResponseType.GetGenericArguments();
+                                                }
+
+                                                var properties = sharpDocsResponse.ResponseType?.GetTypeInfo()
+                                                    .GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+*/
                                                 controllerMethod.SharpDocsResponses = controllerMethod.SharpDocsResponses?
                                                                                         .Append(new ControllerMethodResponse
                                                                                         {
