@@ -18,8 +18,16 @@ namespace SharpDocs.Attributes
         /// </summary>
         public string GroupName { get; set; }
 
+        /// <summary>
+        /// Create a new instance of <see cref="SharpDocsDescriptionAttribute"/>
+        /// </summary>
         public SharpDocsDescriptionAttribute() { }
 
+        /// <summary>
+        /// Create a new instance of <see cref="SharpDocsDescriptionAttribute"/>
+        /// </summary>
+        /// <param name="description">Description of API endpoint/resource</param>
+        /// <param name="groupName">Group name of API endpoint/resource</param>
         public SharpDocsDescriptionAttribute(string description, string groupName)
         {
             Description = description;

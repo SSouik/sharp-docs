@@ -13,8 +13,15 @@ namespace SharpDocs.Attributes
         /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Create a new instance of <see cref="SharpDocsNameAttribute"/>
+        /// </summary>
         public SharpDocsNameAttribute() { }
 
+        /// <summary>
+        /// Create a new instance of <see cref="SharpDocsNameAttribute"/>
+        /// </summary>
+        /// <param name="name">Name of API endpoint/resource</param>
         public SharpDocsNameAttribute(string name)
         {
             Name = name;

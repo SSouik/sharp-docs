@@ -112,9 +112,23 @@ namespace SharpDocs
                                             }
                                             else if (attribute is SharpDocsResponseAttribute sharpDocsResponse)
                                             {
-                                                controllerMethod.SharpDocsStatusCode = sharpDocsResponse.StatusCode;
-                                                controllerMethod.SharpDocsResponseDescription = sharpDocsResponse.Description;
-                                                controllerMethod.SharpDocsRespnseType = sharpDocsResponse.ResponseType;
+                                                controllerMethod.SharpDocsResponses = controllerMethod.SharpDocsResponses?
+                                                                                        .Append(new ControllerMethodResponse
+                                                                                        {
+                                                                                            StatusCode = sharpDocsResponse.StatusCode,
+                                                                                            Description = sharpDocsResponse.Description,
+                                                                                            ResponseType = sharpDocsResponse.ResponseType
+                                                                                        })
+                                                                                        ??
+                                                                                        new List<ControllerMethodResponse>
+                                                                                        {
+                                                                                            new ControllerMethodResponse
+                                                                                            {
+                                                                                                StatusCode = sharpDocsResponse.StatusCode,
+                                                                                                Description = sharpDocsResponse.Description,
+                                                                                                ResponseType = sharpDocsResponse.ResponseType
+                                                                                            }
+                                                                                        };
                                             }
                                         });
 

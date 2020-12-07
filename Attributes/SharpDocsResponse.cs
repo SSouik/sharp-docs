@@ -14,7 +14,7 @@ namespace SharpDocs.Attributes
         public int StatusCode { get; set; }
 
         /// <summary>
-        /// Description of API endpoint/resource reponse
+        /// Description of API endpoint/resource response
         /// </summary>
         public string Description { get; set; }
 
@@ -23,8 +23,17 @@ namespace SharpDocs.Attributes
         /// </summary>
         public Type ResponseType { get; set; }
 
+        /// <summary>
+        /// Create a new instance of <see cref="SharpDocsResponseAttribute"/>
+        /// </summary>
         public SharpDocsResponseAttribute() { }
 
+        /// <summary>
+        /// Create a new instance of <see cref="SharpDocsResponseAttribute"/>
+        /// </summary>
+        /// <param name="statusCode">Status Code of API endpoint/resource response</param>
+        /// <param name="description">Description of API endpoint/resource response</param>
+        /// <param name="responseType">Type of object that the API endpoint/resource returns</param>
         public SharpDocsResponseAttribute(int statusCode, string description, Type responseType)
         {
             StatusCode = statusCode;
