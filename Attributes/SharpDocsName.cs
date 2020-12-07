@@ -6,16 +6,16 @@ namespace SharpDocs.Attributes
     /// API endpoint/resource display name in SharpDocs generated documentation
     /// </summary>
     [AttributeUsage(validOn: AttributeTargets.Method, AllowMultiple = false)]
-    public class SharpDocsName : Attribute
+    public class SharpDocsNameAttribute : Attribute
     {
         /// <summary>
         /// Name of API endpoint/resource
         /// </summary>
         public string Name { get; set; }
 
-        public SharpDocsName() { }
+        public SharpDocsNameAttribute() { }
 
-        public SharpDocsName(string name)
+        public SharpDocsNameAttribute(string name)
         {
             Name = name;
         }

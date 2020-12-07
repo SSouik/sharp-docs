@@ -6,7 +6,7 @@ namespace SharpDocs.Attributes
     /// API endpoint/resource response description for SharpDocs generated documentation
     /// </summary>
     [AttributeUsage(validOn: AttributeTargets.Method, AllowMultiple = true)]
-    public sealed class SharpDocsResponse : Attribute
+    public sealed class SharpDocsResponseAttribute : Attribute
     {
         /// <summary>
         /// Status Code of API endpoint/resource response
@@ -23,9 +23,9 @@ namespace SharpDocs.Attributes
         /// </summary>
         public Type ResponseType { get; set; }
 
-        public SharpDocsResponse() { }
+        public SharpDocsResponseAttribute() { }
 
-        public SharpDocsResponse(int statusCode, string description, Type responseType)
+        public SharpDocsResponseAttribute(int statusCode, string description, Type responseType)
         {
             StatusCode = statusCode;
             Description = description;
