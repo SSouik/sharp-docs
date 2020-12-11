@@ -73,7 +73,7 @@ namespace SharpDocs
         /// </summary>
         /// <param name="type">Type of class that is an instance of <see cref="ControllerBase"/></param>
         /// <returns><see cref="Controller"/> which is a SharpDocs representation of a controller</returns>
-        private static Controller MapControllerInfo(Type type)
+        private static Models.Controller MapControllerInfo(Type type)
         {
             // Get the RouteAttribute on the controller if it exists
             RouteAttribute? routeAttribute = type.GetCustomAttribute(typeof(RouteAttribute)) as RouteAttribute;
@@ -146,7 +146,7 @@ namespace SharpDocs
                                 });
 
             // Build the SharpDocs representation of a controller
-            Controller controller = new Controller
+            Models.Controller controller = new Models.Controller
             {
                 Name = type.Name,
                 BaseRoute = routeAttribute?.Template,
@@ -161,7 +161,7 @@ namespace SharpDocs
         /// Write the controller information to a local JSON file
         /// </summary>
         /// <param name="controllers">List of <see cref="Controller"/> to write to JSON file</param>
-        private static void WriteSharpDocsFile(List<Controller> controllers)
+        private static void WriteSharpDocsFile(List<Models.Controller> controllers)
         {
             // Create a file in the root of the project
             string path = @"./SharpDocs.json";
